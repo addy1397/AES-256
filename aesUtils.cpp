@@ -1,11 +1,10 @@
-#ifndef AES_H
-#define AES_H
-
 //TOODO : remove headers
 #include<bits/stdc++.h>
 #include"gf256.h"
+#include"aes.h"
 using namespace std;
 typedef uint8_t small;
+
 
 void *shiftRowsEncrypt(small stateArray[][4])
 {
@@ -108,5 +107,3 @@ void *mixColumnsDecrypt(small stateArray[][4])
 		}
 		return arr;
 }
-
-#endif
