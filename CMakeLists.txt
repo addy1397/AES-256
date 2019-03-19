@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.13)
-project(New_Project)
+cmake_minimum_required(VERSION 3.10.2)
+project(AES-256)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -7,6 +7,6 @@ include_directories(include)
 
 file(GLOB SOURCES "src/*.cpp")
 
-add_executable(New_Project main.cpp)
+add_executable(AES-256 main.cpp)
 
 
