@@ -16,16 +16,20 @@ void AES::fillKey(){
 	int x;
 	for(int i=0;i<8;i++)
 		for(int j=0;j<4;j++){
-			cout<<"KEY : "<<i<<" "<<j<<"\n";
+			cout<<"KEY : "<<i<<" "<<j<<" : ";
 			cin>>x;
-			this->key[j][i]=x;
+			this->key[j][i]=(small)x;
 		}
-	for(int i=0;i<8;i++){
+	/*for(int i=0;i<8;i++){
 		for(int j=0;j<4;j++)
-			cout<<int(this->key[i][j])<<" ";
+			cout<<int(this->key[j][i])<<" ";
 		cout<<"\n";
-	}
+	}*/
 	this->keyGeneration();
+	cout<<"\n\n";
+	this->encryption();
+	cout<<"\n\n";
+	this->show();
 }
 
 
@@ -33,20 +37,25 @@ void AES::keyGeneration(){
 	for(int i=8;i<56;i++)
 		if(i%8==0)
 		{	
-			small temp[4];
-			for(int j=0;j<4;j++){
-				temp[(j+3)%4]=this->key[i-1][j];
-				temp[(j+3)%4]=sboxEncryption[temp[(j+3)%4]];
-				if((j+3)%4==0)
-					temp[(j+3)%4]^=(1<<((i/8)-1));
-				cout<<temp[(j+3)%4]<<"\n";
-			}
+			small gfunc[4];
+			for(int j=0;j<4;j++)
+				gfunc[(j+3)%4]=this->key[j][i-1];
+			for(int j=0;j<4;j++)
+				gfunc[j]=sboxEncryption[gfunc[j]];
+			gfunc[0]^=(1<<((i/8)-1));
+			for(int j=0;j<4;j++)
+				key[j][i]=gfunc[j];
 		}
 		else
 		{	
 			for(int j=0;j<4;j++)
-				key[i][j]=key[i-1][j]^key[i-8][j];
+				key[j][i]=key[j][i-1]^key[j][i-8];
 		}
+	for(int i=0;i<56;i++){
+		for(int j=0;j<4;j++)
+			cout<<(int)key[j][i]<<" ";
+		cout<<"\n";
+	}
 }
 
 void AES::addRoundKey(small round){
@@ -59,7 +68,7 @@ void AES::show()
 {
 	for(int i=0;i<4;i++){
 		for(int j=0;j<4;j++)
-			cout<<text[i][j]<<" ";
+			cout<<(int)this->text[i][j]<<" ";
 		cout<<"\n";
 	}
 

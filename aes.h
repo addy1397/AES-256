@@ -10,7 +10,7 @@ class AES{
 private:
 	small (*text)[4]=new small[4][4];
 	int size();
-	small key[14][4];
+	small key[4][56];
 public:
 	AES(small text[][4]);
 	void fillKey();
