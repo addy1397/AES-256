@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include"aes.h"
+#include"../include/aes.h"
 #include"aesUtils.cpp"
 #include"sbox.cpp"
 #include"constants.cpp"
@@ -81,6 +81,9 @@ void AES::encryption(){
 			this->text[i][j]^=key[i][j];
 		}
 
+	this->show();
+		cout<<"\n";
+
 	for(int i=1;i<=12;i++)
 	{
 		for(int i=0;i<4;i++)
@@ -89,28 +92,21 @@ void AES::encryption(){
 		this->text=(small(*)[4])shiftRowsEncrypt(this->text);
 		this->text=(small(*)[4])mixColumnsEncrypt(this->text);
 		this->addRoundKey(i);
+
+		this->show();
+		cout<<"\n";
+
 	}
 
 	for(int i=0;i<4;i++)
 			for(int j=0;j<4;j++)
 				this->text[i][j]=sboxEncryption[this->text[i][j]];
+
+	this->show();
+	cout<<"\n";
+
 	this->text=(small(*)[4])shiftRowsEncrypt(this->text);
 	this->addRoundKey(13);
 	this->show();
 
-}
-
-int main(){
-	cout<<"Change IV in constants file : \n";
-	cout<<"Enter 16 bytes of text for encryption : \n";
-	small text[4][4];
-	for(int i=0;i<4;i++)
-		for(int j=0;j<4;j++)
-		{
-			cout<<"BYTE : "<<i*4+j<<" : ";
-			cin>>text[j][i];
-		}
-	AES aes(text);
-	cout<<"Enter Key : \n";
-	aes.fillKey();
 }

@@ -20,4 +20,7 @@ public:
 	void show();
 };
 
+void *shiftRowsEncrypt(small stateArray[][4]);
+void *shiftRowsDecrypt(small stateArray[][4]);
+
 #endif

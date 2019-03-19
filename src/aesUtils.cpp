@@ -1,7 +1,7 @@
 //TOODO : remove headers
 #include<bits/stdc++.h>
-#include"gf256.h"
-#include"aes.h"
+#include"../include/gf256.h"
+#include"../include/aes.h"
 using namespace std;
 typedef uint8_t small;
 

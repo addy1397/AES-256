@@ -86,4 +86,5 @@ large subtract(large x,large y)
 {
     return x^y;
 }
+
 #endif //SSS_BIP39_GF256_H
