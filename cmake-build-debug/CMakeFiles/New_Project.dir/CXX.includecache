@@ -40,11 +40,11 @@ bits/stdc++.h
 bits/stdc++.h
 -
 
-/home/addy/Desktop/shamir secret scheme/New Project/main.cpp
+/home/addy/Desktop/shamir secret scheme/myAES/AES-256/main.cpp
 bits/stdc++.h
 -
 ../src/aes.cpp
-/home/addy/Desktop/shamir secret scheme/src/aes.cpp
+/home/addy/Desktop/shamir secret scheme/myAES/src/aes.cpp
 ../include/aes.h
-/home/addy/Desktop/shamir secret scheme/include/aes.h
+/home/addy/Desktop/shamir secret scheme/myAES/include/aes.h
 

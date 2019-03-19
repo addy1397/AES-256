@@ -1,4 +1,4 @@
-# Install script for directory: /home/addy/Desktop/shamir secret scheme/New Project
+# Install script for directory: /home/addy/Desktop/shamir secret scheme/myAES/AES-256
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/addy/Desktop/shamir secret scheme/New Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/addy/Desktop/shamir secret scheme/myAES/AES-256/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/addy/Desktop/shamir secret scheme/New Project/include" 
+CXX_INCLUDES = -I"/home/addy/Desktop/shamir secret scheme/myAES/AES-256/include" 
 

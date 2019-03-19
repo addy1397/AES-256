@@ -13,10 +13,12 @@ private:
 	small key[4][56];
 public:
 	AES(small text[][4]);
+	void fillText(small text[][4]);
 	void fillKey();
 	void keyGeneration();
 	void addRoundKey(small round);
 	void encryption();
+	void decryption();
 	void show();
 };
 
